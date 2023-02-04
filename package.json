@@ -1,23 +1,29 @@
 {
-  "name": "e-commerce",
+  "name": "e-commerce-api",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamalfi/e-commerce-API.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamalfi/e-commerce-API/issues"
+  },
+  "homepage": "https://github.com/iamalfi/e-commerce-API#readme",
   "dependencies": {
+    "aws-sdk": "^2.1309.0",
     "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "joi": "^17.7.0",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^6.8.3",
-    "nodemailer": "^6.9.0",
-    "stripe": "^11.7.0"
+    "mongoose": "^6.9.0",
+    "multer": "^1.4.5-lts.1"
   }
 }
