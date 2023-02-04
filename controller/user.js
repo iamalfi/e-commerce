@@ -8,13 +8,14 @@ const { promisify } = require("util");
 let randomBytesAsync = promisify(crypto.randomBytes);
 
 const transporter = nodemailer.createTransport({
-    host: "alfiya96960@gmail.com",
+    host: process.env.ADMIN,
     service: "gmail",
     port: 587,
     secure: true,
     auth: {
-        user: "alfiya96960@gmail.com",
-        pass: "maccwgrjszqjulnn",
+        user: process.env.ADMIN,
+        pass: process.env,
+        PASS,
     },
 });
 
@@ -45,7 +46,7 @@ exports.signUp = async (req, res) => {
         user.cart.items = [];
 
         await transporter.sendMail({
-            from: "alfiya96960@gamil.com",
+            from: process.env.ADMIN,
             to: data.email,
             subject: "verify email Address",
             html: `
@@ -117,7 +118,7 @@ exports.login = async (req, res, next) => {
         }
         const token = jwt.sign(
             { email: user.email, userId: user._id },
-            "fhkjln5vynvvvvhnhnv584p757658ftjy57t8fytn8o",
+            process.env.SECRET_KEY,
             { expiresIn: "2h" }
         );
         res.status(200).json({
